@@ -1,0 +1,36 @@
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="search-list">
+      <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder=" Start searching ">
+    </div>
+    <div class="table-responsive mt-3">
+      <table class="table table-striped">
+        <thead class="align-middle">
+          <tr>
+            <th>ID</th>
+            <th>Author</th>
+            <th>Tags</th>
+            <th>Quote Text</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody >
+          <tr *ngFor="let list of quotes | searchFilter : searchText">
+            <td  class="align-middle">{{ list.id }}</td>
+            <td  class="align-middle">{{ list.author }}</td>
+            <td  class="align-middle">{{ list.tags }}</td>
+            <td  class="align-middle">{{ list.quoteText }}</td>
+            <td  class="align-middle" >
+              <span class="material-icons mr-3" (click)="updateQuote(list.id, list)">edit</span>
+            </td>
+            <td class="align-middle">
+              <span class="material-icons mr-3" (click)="deleteQuote(list.id)">delete</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

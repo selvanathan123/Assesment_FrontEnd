@@ -1,0 +1,29 @@
+<div class="container">
+  <form [formGroup]="userForm">
+    <div class="row justify-content-center mt-5">
+      <div class="col-md-6">
+        <div class="form-group">
+          <div>
+            <label for="authorField" class="bold-label">AUTHOR :</label>
+            <input type="text" class="form-control" id="authorField" placeholder="Enter author" formControlName="author">
+          </div>
+        </div>
+        <div class="form-group" *ngFor="let tag of tags; let i = index">
+          <label for="tagField{{i}}" class="bold-label">TAGS :</label>
+          <input class="form-control" id="tagField{{i}}" placeholder="Enter tags" [(ngModel)]="tags[i]"  formControlName="tags" >
+        </div>
+        <div class="icon-label" (click)="addTagField()">
+          <span class="material-icons">control_point</span>
+        </div>
+        <div class="form-group" *ngFor="let quote of quotes; let i = index">
+            <label for="quotesField{{i}}" class="bold-label">QUOTES :</label>
+            <input class="form-control" id="quotesField{{i}}" placeholder="Enter quotes" [(ngModel)]="quotes[i]"  formControlName="quoteText">
+          </div>
+            <div class="icon-label" (click)="addQuotesField()">
+              <span class="material-icons">control_point</span>
+          </div>
+        <button type="submit" routerLink="table-list"  class="btn btn-primary bold-label" (click)="submit()">Submit</button>
+      </div>
+    </div>
+  </form>
+</div>

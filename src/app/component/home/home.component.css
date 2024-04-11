@@ -1,0 +1,14 @@
+  .icon-label {
+      position: relative;
+    }
+    .icon-label .material-icons {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      cursor: pointer;
+    }
+    .bold-label {
+      font-weight: bold;
+      font-family: 'Arial', sans-serif;
+    }
