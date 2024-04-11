@@ -18,12 +18,12 @@ export class QuoteslistService {
   }
 
   updateQuote(id: number, payload: any): Observable<any> {
-    debugger
+    
     const url = `${this.config.editquotes}/${id}`;
     return this.http.put<any>(url, payload);
   }
   deleteQuote(id: number): Observable<any> {
-    debugger
+    
     const url = `${this.config.deletequotes}/${id}`;
     return this.http.delete<any>(url);
   }

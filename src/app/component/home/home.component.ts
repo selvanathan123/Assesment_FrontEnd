@@ -41,14 +41,14 @@ export class HomeComponent {
   }
 
   submit() {
-    debugger
+    
     const quoteData = {
       // id: this.userForm.value.id,
       author: this.userForm.value.author,
       tags: [this.userForm.value.tags],
       quoteText: [this.userForm.value.quoteText]
     };
-    debugger
+    
     this.Service.addQuote(quoteData).subscribe(
       (response) => {
         console.log('Quote added successfully:', response);

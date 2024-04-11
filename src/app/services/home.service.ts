@@ -14,7 +14,7 @@ export class HomeService {
    ) {}
 
    addQuote(quoteData: any): Observable<any> {
-    debugger;
+    ;
     return this.http.post<any>(this.config.home, quoteData);
   }
 }

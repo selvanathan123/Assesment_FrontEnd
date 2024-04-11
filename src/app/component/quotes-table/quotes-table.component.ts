@@ -18,7 +18,7 @@ export class QuotesTableComponent {
 
 
   fetchQuotes() {
-    debugger
+    
     this.Service.getQuotes().subscribe(
       (response) => {
         this.quotes = response;
@@ -31,7 +31,7 @@ export class QuotesTableComponent {
   }
 
   updateQuote(id: number, newData: any) {
-  debugger
+  
     const payload = {
       id: id,
       author: newData.author,
@@ -51,7 +51,7 @@ export class QuotesTableComponent {
 
 
   deleteQuote(id: number) {
-    debugger
+    
     this.Service.deleteQuote(id).subscribe(
       (response) => {
         console.log('Quote deleted successfully:', response);
